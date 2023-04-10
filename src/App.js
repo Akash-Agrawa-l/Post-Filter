@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import axios from "axios";
 import {
   TouchableOpacity,
@@ -30,9 +30,9 @@ function App() {
       });
   }, []);
 
-  const onChangeText = React.useMemo((text) => {
+  const onChangeText = (text) => {
     setSearch(text);
-  }, []);
+  };
 
   const onPress = () => {
     const filterData = posts.filter((item) => item.title.includes(searchText));
